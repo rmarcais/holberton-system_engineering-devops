@@ -1,3 +1,5 @@
 #!/bin/bash
-ls -a
+ls --all
+
+
 
