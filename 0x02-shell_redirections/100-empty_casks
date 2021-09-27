@@ -1,2 +1,2 @@
 #!/bin/bash
-find . -printf '%c/n' -empty
+find . -printf '%f/n' -empty
