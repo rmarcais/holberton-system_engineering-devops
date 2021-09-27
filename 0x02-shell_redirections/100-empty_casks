@@ -1,2 +1,2 @@
 #!/bin/bash
-find . -type d -empty
+find . -printf"%p/n" -empty
