@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+# This script that does a lot of things XD
+sudo touch /var/run/myscript.pid
+sudo bash -c "echo $BASHPID > /var/run/myscript.pid"
+trap "echo Y U no love me?!" SIGINT
+trap signal2 SIGQUIT
+trap signal1 SIGTERM
+function signal1() {
+    echo "I hate the kill command"
+    sudo rm /var/run/myscript.pid
+    exit
+}
+
+function signal2() {
+    sudo rm /var/run/myscript.pid
+    exit
+}
+
+until false; do
+    echo "To infinity and beyond"
+    sleep 2
+done
