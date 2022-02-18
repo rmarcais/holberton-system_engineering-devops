@@ -1,0 +1,40 @@
+#!/usr/bin/env bash
+# This Bash (init) script manages manage_my_process
+
+start() {
+    ./manage_my_process &
+    pid=$(pgrep -f ./manage_my_process)
+    sudo touch /var/run/my_process.pid
+    sudo bash -c "echo $pid > /var/run/my_process.pid"
+    echo "manage_my_process started"
+}
+
+stop() {
+    pkill -f "./manage_my_process"
+    sudo rm /var/run/my_process.pid
+    echo "manage_my_process stopped"
+}
+
+restart() {
+    pkill -f "./manage_my_process"
+    sudo rm /var/run/my_process.pid
+    ./manage_my_process &
+    pid=$(pgrep -f ./manage_my_process)
+    sudo touch /var/run/my_process.pid
+    sudo bash -c "echo $pid > /var/run/my_process.pid"
+    echo "manage_my_process restarted"
+}
+
+case "$1" in
+    start)
+	start
+	;;
+    stop)
+	stop
+	;;
+    restart)
+	restart
+	;;
+    *)
+	echo "Usage: manage_my_process {start|stop|restart}"
+esac
