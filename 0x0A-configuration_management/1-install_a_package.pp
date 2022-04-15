@@ -1,6 +1,6 @@
-# Installs puppet_lint
+#Installs the puppet-link package
 
-package { 'puppet-lint':
-ensure   => '2.5.0',
-provider => 'gem',
+package { 'puppet-link':
+    ensure   => 2.5.0,
+    provider => gem
 }
