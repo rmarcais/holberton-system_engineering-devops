@@ -2,7 +2,7 @@
 # configure an Ubuntu machine
 
 package { 'nginx':
-ensure   => installed,
+ensure   => 'installed',
 provider => 'apt',
 }
 
@@ -18,6 +18,6 @@ line   => 'location /redirect_me { rewrite ^ https://www.youtube.com/watch?v=QH2
 }
 
 service { 'nginx':
-ensure  => running,
+ensure  => 'running',
 require => Package['nginx'],
 }
