@@ -8,7 +8,7 @@ provider => 'apt',
 
 file { '/var/www/html/index.nginx-debian.html':
 ensure => 'present',
-path => '/var/www/html',
+path => '/var/www/html/index.nginx-debian.html',
 content => 'Hello World\n',
 }
 
