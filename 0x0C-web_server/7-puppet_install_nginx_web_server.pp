@@ -1,16 +1,9 @@
 # Puppet manifest containing commands to automatically
 # configure an Ubuntu machine
 
-exec { 'sudo apt-get -y update':
-path => '/usr/bin',
-}
-
-exec { 'sudo apt-get -y update':
-path => '/usr/bin',
-}
-
-exec { 'sudo apt-get -y update':
-path => '/usr/bin',
+package { 'nginx':
+ensure   => 'installed',
+provider => 'apt',
 }
 
 file { 'Hello World':
@@ -21,7 +14,7 @@ content => 'Hello World\n',
 
 file_line { 'Add the redirect_me page':
 ensure => 'present',
-path   => '/var/www/html/index.nginx-debian.html'
+path   => '/var/www/html/index.nginx-debian.html',
 after  => 'server_name _;',
 line   => 'location /redirect_me { rewrite ^ https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent; }',
 }
