@@ -2,13 +2,11 @@
 # configure an Ubuntu machine
 
 package { 'nginx':
-ensure   => 'installed',
+ensure   => installed,
 provider => 'apt',
 }
 
 file { '/var/www/html/index.nginx-debian.html':
-ensure  => 'present',
-path    => '/var/www/html',
 content => 'Hello World\n',
 }
 
@@ -20,6 +18,6 @@ line   => 'location /redirect_me { rewrite ^ https://www.youtube.com/watch?v=QH2
 }
 
 service { 'nginx':
-ensure  => 'running',
+ensure  => running,
 require => Package['nginx'],
 }
