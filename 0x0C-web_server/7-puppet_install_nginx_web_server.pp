@@ -14,11 +14,12 @@ content => 'Hello World\n',
 
 file_line { 'Add the redirect_me page':
 ensure => 'present',
-path   => '/var/www/html/index.nginx-debian.html',
+path   => '/etc/nginx/sites-available/default',
 after  => 'server_name _;',
 line   => 'location /redirect_me { rewrite ^ https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent; }',
 }
 
-exec { 'service nginx restart':
-path => '/usr/sbin'
+service { 'nginx':
+ensure  => 'running',
+require => Package['nginx'],
 }
