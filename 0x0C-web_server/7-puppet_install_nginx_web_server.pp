@@ -1,28 +1,31 @@
 # Puppet manifest containing commands to automatically
 # configure an Ubuntu machine
 
-package { 'nginx':
-  ensure   => present,
-  provider => 'apt'
+exec { 'sudo apt-get -y update':
+path => '/usr/bin',
 }
 
-file {'Adding the first content':
-  ensure  => present,
-  path    => '/var/www/html/index.html',
-  content => 'Hello World!\n',
+exec { 'sudo apt-get -y update':
+path => '/usr/bin',
 }
 
-file_line { 'redirect_me page':
-  ensure => 'present',
-  path   => '/etc/nginx/sites-available/default',
-  after  => 'listen 80 default_server;',
-  line   => '        rewrite ^/redirect_me https://www.youtube.com/watch?v=dQw4w9WgXcQ permanent;',
+exec { 'sudo apt-get -y update':
+path => '/usr/bin',
 }
 
-service { 'nginx':
-  ensure     => running,
-  enable     => true,
-  hasrestart => true,
-  require    => Package['nginx'],
-  subscribe  => File_line['redirect_me page'],
+file { 'Hello World':
+ensure  => 'present',
+path    => '/var/www/html',
+content => 'Hello World\n',
+}
+
+file_line { 'Add the redirect_me page':
+ensure => 'present',
+path   => '/var/www/html/index.nginx-debian.html'
+after  => 'server_name _;',
+line   => 'location /redirect_me { rewrite ^ https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent; }',
+}
+
+exec { 'service nginx restart':
+path => '/usr/sbin'
 }
