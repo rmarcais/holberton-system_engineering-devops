@@ -6,7 +6,7 @@ ensure   => 'installed',
 provider => 'apt',
 }
 
-file { 'Hello World':
+file { '/var/www/html/index.nginx-debian.html':
 ensure  => 'present',
 path    => '/var/www/html',
 content => 'Hello World\n',
