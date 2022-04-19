@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# This script configures a new Ubuntu machine
+
+sudo apt-get -y update
+sudo apt-get -y install nginx
+sudo chown -R "$USER":"$USER" /var/www/html
+echo "Hello World" > index.nginx-debian.html
+service nginx start
