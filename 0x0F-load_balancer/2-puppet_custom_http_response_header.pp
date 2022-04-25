@@ -1,9 +1,13 @@
-# Puppet manifest containing commands to automatically
-# configure an Ubuntu machine
+#Create Nginx configuratio server via puppet
+
+exec { 'update':
+  command => '/usr/bin/apt-get update',
+}
 
 package { 'nginx':
-ensure   => 'installed',
-provider => 'apt',
+  ensure   => present,
+  name     => 'nginx',
+  require  => Exec['update'],
 }
 
 file_line { 'Add header':
@@ -14,8 +18,7 @@ file_line { 'Add header':
   require => Package['nginx'],
 }
 
-
 service { 'nginx':
-ensure  => 'running',
-require => Package['nginx'],
+  ensure     => running,
+  require    => Package['nginx'],
 }
