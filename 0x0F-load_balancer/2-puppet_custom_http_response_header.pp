@@ -6,8 +6,9 @@ command => '/usr/bin/apt-get update',
 }
 
 package { 'nginx':
-ensure   => 'installed',
-provider => 'apt',
+ensure   => 'present',
+name => 'nginx',
+require => Exec['update'],
 }
 
 file_line { 'Add custom header':
