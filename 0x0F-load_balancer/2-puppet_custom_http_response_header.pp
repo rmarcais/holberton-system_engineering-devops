@@ -1,4 +1,5 @@
-#Create Nginx configuratio server via puppet
+# Puppet manifest containing commands to automatically
+# configure an Ubuntu machine
 
 exec { 'update':
   command => '/usr/bin/apt-get update',
@@ -13,7 +14,7 @@ package { 'nginx':
 file_line { 'Add header':
   ensure  => 'present',
   path    => '/etc/nginx/sites-available/default',
-  after   => 'listen 80 default_server;',
+  after   => 'server_name _;',
   line    => 'add_header X-Served-By $hostname;',
   require => Package['nginx'],
 }
