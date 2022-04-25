@@ -6,7 +6,7 @@ command => '/usr/bin/apt-get update',
 }
 
 package { 'nginx':
-ensure  => 'present',
+ensure  => present,
 name    => 'nginx',
 require => Exec['update'],
 }
@@ -20,6 +20,6 @@ require => Package['nginx'],
 }
 
 service { 'nginx':
-ensure  => 'running',
+ensure  => running,
 require => Package['nginx'],
 }
