@@ -11,7 +11,7 @@ name    => 'nginx',
 require => Exec['update'],
 }
 
-file_line { 'Add custom header':
+file_line { 'Add header':
 ensure  => 'present',
 path    => '/etc/nginx/sites-available/default',
 after   => 'server_name _;',
