@@ -6,13 +6,13 @@ ensure   => 'installed',
 provider => 'apt',
 }
 
-file_line { 'Add the custom HTTP header':
-ensure => 'present',
-path   => '/etc/nginx/sites-available/default',
-after  => 'server_name _;',
-line   => 'add_header X-Served-By $HOSTNAME;',
+file_line { 'Add header':
+  ensure  => 'present',
+  path    => '/etc/nginx/sites-available/default',
+  after   => 'listen 80 default_server;',
+  line    => 'add_header X-Served-By $hostname;',
+  require => Package['nginx'],
 }
-
 
 
 service { 'nginx':
