@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# Bash script that configures a server with Nginx listening on port 80 (short and sweet)
+ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
+service nginx restart
+kill -9 "$(cat /var/run/nginx.pid)"
