@@ -49,4 +49,3 @@ You do **not** need to attempt to upgrade versions. This project is simply a set
 ```
 $ gem install puppet-lint
 ```
-
