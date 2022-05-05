@@ -1,0 +1,20 @@
+![Holberton France Logo](https://images.squarespace-cdn.com/content/v1/60bf70d860f31b4f60455443/1625061110826-904UGWRZ9PX81YWARXMT/HolbertonFRANCEFichier+16.png?format=1500w)
+
+# 0x11. What happens when you type google.com in your browser and press Enter
+
+## Background Context
+Being a Full-Stack Software Engineer means you’re comfortable interacting with any layer of the stack.
+
+A way to easily assess this is to simply ask an engineer to explain how a software system works. They can have a general overview of the flow or can choose to dig deep in a certain area.
+
+Let’s practice by exploring the infrastructure side (network, servers, security…) of the question.
+
+![LOL](https://s3.amazonaws.com/intranet-projects-files/holbertonschool-sysadmin_devops/298/aJPw3mw.jpg)
+
+## Requirements
+### General
+- You can post your blog post on the platform of your choice, LinkedIn or Medium are good ones
+- A README.md file, at the root of the folder of the project, is mandatory
+## More Info
+### Manual QA Review
+**It is your responsibility to request a review for your blog from a peer before the project’s deadline. If no peers have been reviewed, you should request a review from a TA or staff member.**
