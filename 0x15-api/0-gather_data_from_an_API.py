@@ -21,7 +21,7 @@ if __name__ == "__main__":
         if value.get("completed") is True:
             completed.append(value.get("title"))
 
-    print("Employee {} is done with tasks ({}/{}):"
+    print("Employee {} is done with tasks({}/{}):"
           .format(username, len(completed), total))
     for i in completed:
         print("\t {}".format(i))
