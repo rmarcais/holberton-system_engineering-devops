@@ -25,5 +25,6 @@ if __name__ == "__main__":
                     "completed": value.get("completed")}
             todo_list.append(dico)
         dictionary[uid] = todo_list
+    json_object = json.dumps(dictionary)
     with open(filename, "w") as f:
-        json.dump(dictionary, f)
+        f.write(json_object)
