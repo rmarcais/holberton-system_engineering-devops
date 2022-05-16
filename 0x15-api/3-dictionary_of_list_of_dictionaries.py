@@ -26,5 +26,5 @@ if __name__ == "__main__":
             todo_list.append(dico)
         dictionary[uid] = todo_list
     json_object = json.dumps(dictionary)
-    with open(filename, "a") as f:
+    with open(filename, "w") as f:
         f.write(json_object)
