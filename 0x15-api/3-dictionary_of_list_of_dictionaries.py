@@ -4,7 +4,6 @@ Python script that exports data using the CSV format.
 Records all tasks from all employees
 """
 
-
 import json
 import requests
 from sys import argv
@@ -27,5 +26,5 @@ if __name__ == "__main__":
             todo_list.append(dico)
         dictionary[uid] = todo_list
     json_object = json.dumps(dictionary)
-    with open(filename, "w") as f:
+    with open(filename, "a") as f:
         f.write(json_object)
