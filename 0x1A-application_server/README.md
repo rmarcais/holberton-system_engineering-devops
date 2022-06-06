@@ -2,7 +2,7 @@
 
 # 0x1A. Application server
 
-![DIAGRAM](https://holbertonintranet.s3.amazonaws.com/uploads/medias/2018/9/c7d1ed0a2e10d1b4e9b3.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOU5BHMTQX4%2F20220606%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20220606T135936Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=83de492c3a12f214e57c4d015b2a85e8d1908d6d5eb12f038320a20ff73c32df)
+![DIAGRAM](https://geekflare.com/wp-content/uploads/2015/10/application-server-location.png)
 
 ## Background Context
 
